@@ -1,10 +1,10 @@
 <?php
 
-namespace marsRover\Http\Request;
+namespace Marsrover\Http\Request;
 
-use marsRover\Http\Request\Model\Request;
-use marsRover\Http\Response\Response;
-use marsRover\Http\Response\ResponseProvider;
+use Marsrover\Http\Request\Model\Request;
+use Marsrover\Http\Response\Response;
+use Marsrover\Http\Response\ResponseProvider;
 
 class RequestHandler
 {
@@ -33,9 +33,6 @@ class RequestHandler
 
             case "PUT":
                 return new PutHandler();
-
-            case "DELETE":
-                return new DeleteHandler();
 
             default:
                 return new RequestHandler();

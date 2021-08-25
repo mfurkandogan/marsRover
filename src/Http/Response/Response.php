@@ -1,6 +1,6 @@
 <?php
 
-namespace marsRover\Http\Response;
+namespace Marsrover\Http\Response;
 
 
 class Response

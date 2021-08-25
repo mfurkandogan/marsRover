@@ -1,9 +1,9 @@
 <?php
 
-namespace marsRover\Http\Request;
+namespace Marsrover\Http\Request;
 
-use marsRover\Http\Request\Model\Request;
-use marsRover\Http\Response\ResponseProvider;
+use Marsrover\Http\Request\Model\Request;
+use Marsrover\Http\Response\ResponseProvider;
 
 class PostHandler extends RequestHandler
 {

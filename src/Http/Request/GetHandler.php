@@ -1,8 +1,8 @@
 <?php
 
-namespace marsRover\Http\Request;
+namespace Marsrover\Http\Request;
 
-use marsRover\Http\Response\ResponseProvider;
+use Marsrover\Http\Response\ResponseProvider;
 
 class GetHandler extends RequestHandler
 {

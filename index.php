@@ -1,10 +1,11 @@
 <?php
-
-namespace marsRover;
+namespace Test;
 
 define('DS',DIRECTORY_SEPARATOR);
 
-use marsRover\Http\Request\RequestHandler;
+require __DIR__.DS.'vendor'.DS.'autoload.php';
+
+use Marsrover\Http\Request\RequestHandler;
 
 $requestHandler = RequestHandler::getInstance();
 

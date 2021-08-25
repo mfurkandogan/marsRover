@@ -1,6 +1,6 @@
 <?php
 
-namespace marsRover\Http\Request\Model;
+namespace Marsrover\Http\Request\Model;
 
 
 class Request
