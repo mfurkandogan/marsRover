@@ -1,9 +1,12 @@
 <?php
 
-namespace marsRover;
+namespace marsRover\Http\Response;
 
-function HttpStatus($code) {
-    $status = array(
+
+class Response
+{
+
+    private $statusCodeDesc = [
         100 => 'Continue',
         101 => 'Switching Protocols',
         200 => 'OK',
@@ -44,35 +47,56 @@ function HttpStatus($code) {
         502 => 'Bad Gateway',
         503 => 'Service Unavailable',
         504 => 'Gateway Timeout',
-        505 => 'HTTP Version Not Supported');
+        505 => 'HTTP Version Not Supported'];
 
-    return $status[$code] ? $status[$code] : $status[500];
-}
+    private $statuCode;
+    private $responseBody = null;
 
-function getRequestBody(){
-    return file_get_contents("php://input");
-}
-
-if (!function_exists('getallheaders')) {
-    function getallheaders()
+    /**
+     * @param mixed $responseBody
+     */
+    public function setResponseBody($responseBody)
     {
-        $headers = [];
-        foreach ($_SERVER as $name => $value) {
-            if (substr($name, 0, 5) == 'HTTP_') {
-                $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
-            }
+        if(is_array($responseBody) || ($responseBody instanceof \stdClass)){
+            $this->responseBody = $responseBody;
         }
-        return $headers;
     }
-}
 
-function setResponseStatus($responseCode){
-    header("HTTP/1.1 ".$responseCode." ".HttpStatus($responseCode));
-    header("Content-Type: application/json; charset=utf-8");
-}
+    /**
+     * @param mixed $statu
+     */
+    public function setStatuCode($statuCode)
+    {
 
-function sendResponseStatus($responseCode){
-    header("HTTP/1.1 ".$responseCode." ".HttpStatus($responseCode));
-    header("Content-Type: application/json; charset=utf-8");
-    exit;
+        $this->statuCode = isset($this->statusCodeDesc[$statuCode]) ? $statuCode : 500;
+
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResponseBody()
+    {
+        return $this->responseBody;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatuCode()
+    {
+        return $this->statuCode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatu()
+    {
+        return $this->statusCodeDesc[$this->statuCode];
+    }
+
+    public function hasBody(){
+        return !empty($this->responseBody) && !is_null($this->responseBody);
+    }
 }

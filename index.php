@@ -1,13 +1,10 @@
 <?php
 
-
-
-
 namespace marsRover;
 
 define('DS',DIRECTORY_SEPARATOR);
 
-use Vivense\Http\Request\RequestHandler;
+use marsRover\Http\Request\RequestHandler;
 
 $requestHandler = RequestHandler::getInstance();
 
