@@ -1,5 +1,5 @@
 <?php
-namespace Test;
+namespace Marsrover;
 
 define('DS',DIRECTORY_SEPARATOR);
 
