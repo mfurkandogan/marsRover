@@ -14,7 +14,8 @@ class RequestHandler
      */
     protected $request;
 
-    public static function getInstance() {
+    public static function getInstance()
+    {
         if (empty(self::$instance)) {
             self::$instance = self::createInstance();
         }
@@ -23,25 +24,23 @@ class RequestHandler
     }
 
 
-    private static function createInstance(){
-
+    private static function createInstance()
+    {
         switch ($_SERVER["REQUEST_METHOD"]) {
             case "POST":
                 return new PostHandler();
             case "GET":
                 return new GetHandler();
-
             case "PUT":
                 return new PutHandler();
-
             default:
                 return new RequestHandler();
         }
-
     }
 
 
-    public function handleRequest(){
+    public function handleRequest()
+    {
 
         $this->request = new Request();
     }
@@ -49,12 +48,13 @@ class RequestHandler
     /**
      * @param $response Response
      */
-    public function returnResponse(&$response){
+    public function returnResponse(&$response)
+    {
 
-        header("HTTP/1.1 ".$response->getStatuCode()." ".$response->getStatu());
+        header("HTTP/1.1 " . $response->getStatuCode() . " " . $response->getStatu());
         header("Content-Type: application/json; charset=utf-8");
 
-        if($response->hasBody()){
+        if ($response->hasBody()) {
             echo json_encode($response->getResponseBody());
         }
 
