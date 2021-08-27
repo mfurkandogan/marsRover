@@ -1,7 +1,9 @@
 <?php
 namespace Marsrover;
 
-define('DS',DIRECTORY_SEPARATOR);
+if (!defined("DS")) {
+    define('DS', DIRECTORY_SEPARATOR);
+}
 
 require __DIR__.DS.'vendor'.DS.'autoload.php';
 
