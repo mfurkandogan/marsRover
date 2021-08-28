@@ -1,6 +1,6 @@
 <?php
 
-namespace marsRover\Models;
+namespace Marsrover\Models;
 
 
 class Rover

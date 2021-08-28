@@ -33,6 +33,8 @@ class RequestHandler
                 return new GetHandler();
             case "PUT":
                 return new PutHandler();
+            case "DELETE":
+                return new DeleteHandler();
             default:
                 return new RequestHandler();
         }
