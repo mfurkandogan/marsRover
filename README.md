@@ -17,3 +17,6 @@ Example request body:
 {
  “commands”: “LMLMLMLMM”
 }
+
+Database usage is not required.
+Usage of PHP version >= 5.3 is required.
