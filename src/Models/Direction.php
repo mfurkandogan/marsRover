@@ -52,14 +52,14 @@ class Direction
         $direction = strtoupper(trim($direction));
         if (in_array($direction, self::AVAILABLE_DIRECTIONS)) {
             $this->direction = $direction;
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     public function change($spin)
     {
-        if (Spin::LEFT === (string)$spin) {
+        if (Spin::LEFT === $spin) {
             return new self(self::RIGHT_TO_LEFT_DIRECTIONS[$this->direction]);
         }
 

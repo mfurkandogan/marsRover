@@ -15,7 +15,8 @@ class Spin
     {
         if (in_array($input, self::AVAILABLE_SPINS)) {
             $this->spin = $input;
+        } else {
+            return false;
         }
-        return false;
     }
 }

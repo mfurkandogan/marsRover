@@ -31,6 +31,6 @@ class Action
             }
         }
 
-        return (string)$this->rover;
+        return $this->rover;
     }
 }
