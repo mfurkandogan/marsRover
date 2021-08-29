@@ -13,7 +13,7 @@ current spot. 'M' means move forward one grid point, and maintain the same headi
 Assume that the square directly North from (x, y) is (x, y+1).
 Create a Web API to create and manage rovers.
 
-Example request body:
+Example request body (POST):
 {
  “commands”: “LMLMLMLMM”
 }

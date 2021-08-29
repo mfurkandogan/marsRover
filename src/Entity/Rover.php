@@ -17,8 +17,8 @@ use Marsrover\Models\Spin;
  */
 class Rover implements IRover
 {
-    private $direction;
-    private $position;
+    public $direction;
+    public $position;
 
 
     /**

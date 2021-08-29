@@ -9,7 +9,7 @@ class Spin
     const LEFT  = 'L';
     const RIGHT = 'R';
     const AVAILABLE_SPINS = [self::LEFT, self::RIGHT];
-    private $spin = '';
+    public $spin = '';
 
     public function __construct($input)
     {

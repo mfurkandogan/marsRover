@@ -6,7 +6,7 @@ namespace Marsrover\Models;
 
 class Coordinate
 {
-    private $coordinate = 0;
+    public $coordinate = 0;
 
     public function __construct($coordinate)
     {
