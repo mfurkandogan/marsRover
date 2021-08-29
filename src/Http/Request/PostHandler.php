@@ -70,11 +70,7 @@ class PostHandler extends RequestHandler
             $rover = new Rover($args['position'], $args['direction']);
             $action = new Action($rover);
             $result = $action->act(Input::movementCommands($this->request->getRequestBody()->commands));
-            $a = [];
-            $a['direction'] = $result->direction->direction;
-            $a['position']['xCoordinate'] = $result->position->xCoordinate->coordinate;
-            $a['position']['yCoordinate'] = $result->position->yCoordinate->coordinate;
-            $response = ResponseProvider::getInstance()->createResponse(200,$a);
+            $response = ResponseProvider::getInstance()->createResponse(200, (array)$result);
             $this->returnResponse($response);
         } else {
             $response = ResponseProvider::getInstance()->createResponse(500,$result);
