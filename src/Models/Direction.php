@@ -6,7 +6,7 @@ namespace Marsrover\Models;
 
 class Direction
 {
-    private $direction = '';
+    public $direction = '';
 
     const X_AXIS = 'X';
     const Y_AXIS = 'Y';

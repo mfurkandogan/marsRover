@@ -6,8 +6,8 @@ namespace Marsrover\Models;
 
 class Position
 {
-    private $xCoordinate;
-    private $yCoordinate;
+    public $xCoordinate;
+    public $yCoordinate;
 
     public function __construct(Coordinate $xCoordinate, Coordinate $yCoordinate)
     {
