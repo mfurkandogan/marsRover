@@ -4,8 +4,8 @@
 namespace Marsrover\Entity;
 
 
-use Marsrover\Interfaces\PositionableInterface;
-use Marsrover\Interfaces\RoverInterface;
+use Marsrover\Interfaces\IPositionable;
+use Marsrover\Interfaces\IRover;
 use Marsrover\Models\Direction;
 use Marsrover\Models\Move;
 use Marsrover\Models\Position;
@@ -15,7 +15,7 @@ use Marsrover\Models\Spin;
  * Class Rover
  * @package Marsrover\Entity
  */
-class Rover implements RoverInterface
+class Rover implements IRover
 {
     private $direction;
     private $position;
@@ -58,7 +58,7 @@ class Rover implements RoverInterface
     }
 
 
-    public function relativePosition(PositionableInterface $object)
+    public function relativePosition(IPositionable $object)
     {
         // TODO: Implement relativePosition() method.
     }

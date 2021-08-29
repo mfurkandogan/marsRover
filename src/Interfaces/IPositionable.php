@@ -2,7 +2,7 @@
 
 namespace Marsrover\Interfaces;
 
-interface PositionableInterface
+interface IPositionable
 {
     public function relativePosition(self $object);
 }

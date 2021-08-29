@@ -4,11 +4,11 @@
 namespace Marsrover\Entity;
 
 
-use Marsrover\Interfaces\PlateauInterface;
-use Marsrover\Interfaces\PositionableInterface;
+use Marsrover\Interfaces\IPlateau;
+use Marsrover\Interfaces\IPositionable;
 use Marsrover\Models\Position;
 
-class Plateau implements PlateauInterface
+class IPlateau implements IPlateau
 {
     private $position;
 
@@ -17,7 +17,7 @@ class Plateau implements PlateauInterface
         $this->position = $position;
     }
 
-    public function relativePosition(PositionableInterface $object)
+    public function relativePosition(IPositionable $object)
     {
         return $object;
     }

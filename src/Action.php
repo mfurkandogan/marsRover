@@ -4,7 +4,7 @@
 namespace Marsrover;
 
 
-use Marsrover\Interfaces\RoverInterface;
+use Marsrover\Interfaces\IRover;
 use Marsrover\Models\Move;
 use Marsrover\Models\Spin;
 
@@ -12,7 +12,7 @@ class Action
 {
     private $rover;
 
-    public function __construct(RoverInterface $rover)
+    public function __construct(IRover $rover)
     {
         $this->rover = $rover;
     }
