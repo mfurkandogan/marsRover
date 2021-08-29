@@ -7,6 +7,7 @@ namespace Marsrover\Entity;
 use Marsrover\Models\Direction;
 use Marsrover\Models\Move;
 use Marsrover\Models\Position;
+use Marsrover\Models\Spin;
 
 class Rover
 {
@@ -19,7 +20,12 @@ class Rover
         $this->direction = $direction;
     }
 
-    public function move(Move $move): void
+    public function spin(Spin $spin)
+    {
+        $this->direction = $this->direction->change($spin);
+    }
+
+    public function move(Move $move)
     {
         $value = $move->factor($this->direction->axisValue());
 

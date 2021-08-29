@@ -6,11 +6,11 @@ namespace Marsrover\Models;
 
 class Move
 {
-    public const COMMAND_MOVE = 'M';
+    const COMMAND_MOVE = 'M';
 
-    private const MOVEMENT_FACTOR = 1;
+    const MOVEMENT_FACTOR = 1;
 
-    private const ALLOWED_COMMANDS = [
+    const ALLOWED_COMMANDS = [
         self::COMMAND_MOVE,
     ];
 

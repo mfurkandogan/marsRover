@@ -8,31 +8,31 @@ class Direction
 {
     private $direction = '';
 
-    public const X_AXIS = 'X';
-    public const Y_AXIS = 'Y';
+    const X_AXIS = 'X';
+    const Y_AXIS = 'Y';
 
-    private const NORTH = 'N';
-    private const SOUTH = 'S';
-    private const EAST  = 'E';
-    private const WEST  = 'W';
+    const  NORTH = 'N';
+    const  SOUTH = 'S';
+    const  EAST  = 'E';
+    const  WEST  = 'W';
 
-    private const AVAILABLE_DIRECTIONS = [self::NORTH, self::SOUTH, self::EAST, self::WEST];
+    const  AVAILABLE_DIRECTIONS = [self::NORTH, self::SOUTH, self::EAST, self::WEST];
 
-    private const LEFT_TO_RIGHT_DIRECTIONS = [
+    const  LEFT_TO_RIGHT_DIRECTIONS = [
         self::NORTH => self::WEST,
         self::WEST  => self::SOUTH,
         self::SOUTH => self::EAST,
         self::EAST  => self::NORTH,
     ];
 
-    private const RIGHT_TO_LEFT_DIRECTIONS = [
+    const  RIGHT_TO_LEFT_DIRECTIONS = [
         self::NORTH => self::EAST,
         self::EAST  => self::SOUTH,
         self::SOUTH => self::WEST,
         self::WEST  => self::NORTH,
     ];
 
-    private const AXIS_MAP = [
+    const  AXIS_MAP = [
         self::NORTH => self::Y_AXIS,
         self::SOUTH => self::Y_AXIS,
         self::EAST  => self::X_AXIS,
@@ -40,7 +40,7 @@ class Direction
 
     ];
 
-    private const AXIS_VALUE_MAP = [
+    const  AXIS_VALUE_MAP = [
         self::NORTH =>  1,
         self::WEST  =>  1,
         self::EAST  => -1,
