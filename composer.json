@@ -2,7 +2,8 @@
   "require": {
     "php": ">=5.6.0",
     "symfony/polyfill-mbstring" : "1.*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "ext-http": "*"
   },
   "autoload": {
     "psr-4": {
