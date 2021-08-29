@@ -62,10 +62,7 @@ class PostHandler extends RequestHandler
     }
 
     private function setRoverCommand(){
-
-        $result=null;
-
-        if(isset($this->request->getRequestBody()->commands)){
+        if(!empty($this->request->getRequestBody()->commands)){
             $args = $this->setRoverArgs();
             $rover = new Rover($args['position'], $args['direction']);
             $action = new Action($rover);
@@ -73,7 +70,7 @@ class PostHandler extends RequestHandler
             $response = ResponseProvider::getInstance()->createResponse(200, (array)$result);
             $this->returnResponse($response);
         } else {
-            $response = ResponseProvider::getInstance()->createResponse(500,$result);
+            $response = ResponseProvider::getInstance()->createResponse(500,['An error occurred while processing your request']);
             $this->returnResponse($response);
         }
     }
